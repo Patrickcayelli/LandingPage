@@ -1,0 +1,502 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  
+  .hero {
+    background: 
+      linear-gradient(#C33737, #C33737),
+      url('/images/background.png') no-repeat center center;
+    background-size: cover;
+    padding: 100px 20px 132px;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: "GymGenie";
+    position: absolute;
+    top: 20px;
+    left: 11%;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding-right: 5%;
+    z-index: 2; /* Ensuring content is above the pseudo-element */
+  }
+  
+  .hero-text {
+    max-width: 50%;
+    text-align: left;
+  }
+  
+  .hero-text h2 {
+    font-size: 52px;
+    font-weight: 700;
+  }
+  
+  .hero-text p {
+    font-size: 16px;
+    font-weight: 400;
+    width: 80%;
+  }
+  
+  .hero-form {
+    background: #EE9C9C;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 22px;
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center;
+  }
+  
+  .hero-form h3 {
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-weight: 600;
+    font-size: 35px; 
+  }
+  
+  #joinForm p {
+    color: #FFFFFF;
+    padding-top: 10px;
+    text-align: left;
+    justify-content: left;
+  }
+  
+  #joinForm {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+  
+  #joinForm input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    margin-top: 0px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px; 
+  }
+  
+  #joinForm button {
+    padding: 15px 20px;
+    width: 100%;
+    background-color: #C33737;
+    color: white;
+    font-size: 18px; 
+    border: none;
+    border-radius: 5px;
+    margin-top: 60px; 
+    cursor: pointer;
+  }
+  
+  #joinForm button:hover {
+    background-color: grey;
+  }
+  
+  .spinner {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top-color: #28a745;
+    animation: spin 1s ease-in-out infinite;
+    margin: 20px auto;
+  }
+  
+  .loading .spinner {
+    display: block;
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .checkmark {
+    display: none;
+    width: 56px;
+    height: 56px;
+    margin: 20px auto;
+  }
+  
+  .checkmark svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .checkmark path {
+    stroke: #28a745;
+    stroke-width: 4;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    transition: stroke-dashoffset 0.5s;
+  }
+  
+  .hero.success .checkmark {
+    display: block;
+  }
+  
+  .hero.success .checkmark path {
+    stroke-dashoffset: 0;
+  }
+  
+  .problem-statement {
+    background: #fff;
+    padding: 60px 20px;
+    border-radius: 5px;
+    text-align: center;
+    margin: 50px 0;
+    width: 60%;
+  }
+  
+  .problem-statement p {
+    color: #606060;
+    padding-top: 20px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+  
+  .problem-statement h2 {
+    color: #262626;
+    padding-top: 20px;
+    font-size: 40px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+  
+  .pain-points,
+  .user-quotes {
+    background: #fff;
+    padding: 80px 20px 100px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+  }
+  
+  .user-quotes h2 {
+    color: #262626;
+    font-weight: 600;
+    font-size: 40px;
+  }
+  
+  .pain-points {
+    background: #C33737;
+    padding: 80px 20px 100px;
+    border-radius: 0px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .pain-point-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  
+  .quote-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  
+  .pain-point {
+    background: #FDFCFA;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    flex-basis: calc(50% - 20px); /* Adjust the basis to fit three items per row */
+    margin: 10px;
+    text-align: left;
+  }
+  
+  /* Ensuring the last row centers the two items */
+  .pain-point:nth-last-child(-n+2) {
+    flex-basis: calc(50% - 20px);
+    margin-top: 20px; /* Add space between rows */
+  }
+  
+  .quote {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    flex-basis: 40%;
+    margin: 10px;
+    text-align: left;
+    border: 10px solid #EE9C9C;
+    border-radius: 100px;
+  }
+  
+  .pain-point h3,
+  .quote p {
+    margin: 0 0 10px;
+    color: #000000;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  
+  .pain-points h2 {
+    color: white;
+    font-weight: 600;
+    font-size: 40px;
+  }
+  
+  .problem-statement h2 {
+    color: #262626;
+  }
+  
+  .pain-point a {
+    color: black;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .pain-point p {
+    color: #606060;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  
+  .quote-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 60px;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  
+  .quote {
+    background: #fff; /* Set background to black */
+    color: #fff; /* Set text color to white */
+    padding: 20px;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adjust shadow for better visibility */
+    flex-basis: calc(50% - 20px);
+    margin: 10px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  .quote p {
+    margin: 0 0 10px;
+    color: #000;
+    font-weight: 400;
+    font-size: 16px;
+  }
+  
+  .quote .user-info {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .quote .user-info img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+  
+  .quote .user {
+    font-weight: bold;
+    color: #000;
+  }
+  
+  .quote .user-role {
+    color: #000;
+  }
+  
+  footer {
+    background: #C33737;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #C33737;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .footer-cta {
+    text-align: left;
+  }
+  
+  .footer-cta h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .footer-cta p {
+    font-size: 14px;
+    margin: 0;
+    color: #ffffff;
+  }
+  
+  .footer-button {
+    text-align: right;
+  }
+  
+  .footer-button button {
+    background-color: #fff;
+    color: #C33737;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .footer-button button:hover {
+    background-color: #606060;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    background-color: #f7f7f7;
+    color: black;
+  }
+  
+  .footer-content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .footer-content-center h3 {
+    font-size: 40px;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  
+  .footer-content-center p {
+    font-size: 16px;
+    color: #606060;
+    margin: 0;
+    width: 100%;
+    font-weight: 400;
+  }
+  
+  @media (max-width: 1024px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-cta,
+    .footer-button {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  
+    .footer-content-center {
+      flex-direction: column;
+    }
+  
+    .footer-content-center h3,
+    .footer-content-center p {
+      margin: 10px 0;
+    }
+  
+    .hero-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .hero-text,
+    .hero-form {
+      max-width: 100%;
+      margin-top: 20px;
+    }
+  
+    .hero-text h2 {
+      font-size: 32px; 
+      padding-top: 5rem;
+    }
+  
+    .pain-point-cards,
+    .quote-cards {
+      padding-left: 5%;
+      padding-right: 5%;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pain-point,
+    .quote {
+      flex-basis: 100%;
+      margin: 10px 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero {
+      padding: 20px 10px;
+    }
+  
+    .hero-form {
+      padding: 20px;
+    }
+  
+    .pain-points {
+      padding: 20px 10px;
+    }
+  
+    .pain-point-cards,
+    .quote-cards {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .problem-statement {
+      width: 90%;
+      padding: 40px 20px;
+    }
+  
+    body {
+      overflow-x: hidden; /* Prevent horizontal overflow */
+    }
+  }
